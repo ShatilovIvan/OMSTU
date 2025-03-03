@@ -77,6 +77,9 @@ class Task1
 
                     int a = stack.Pop();
                     int b = stack.Pop();
+                    
+                    if (b == 0)
+                    	Error();
 
                     stack.Push(a / b);
                     continue;
