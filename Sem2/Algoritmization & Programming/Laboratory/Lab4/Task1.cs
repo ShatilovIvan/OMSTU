@@ -36,7 +36,7 @@ class Task1
 
                 if (input[i] == '+')
                 {
-                    if (stack.Count != 2)
+                    if (stack.Count < 2)
                         Error();
 
                     int a = stack.Pop();
@@ -48,7 +48,7 @@ class Task1
 
                 if (input[i] == '*')
                 {
-                    if (stack.Count != 2)
+                    if (stack.Count < 2)
                         Error();
 
                     int a = stack.Pop();
@@ -60,7 +60,7 @@ class Task1
 
                 if (input[i] == '-')
                 {
-                    if (stack.Count != 2)
+                    if (stack.Count < 2)
                         Error();
 
                     int a = stack.Pop();
@@ -72,7 +72,7 @@ class Task1
 
                 if (input[i] == '/')
                 {
-                    if (stack.Count != 2)
+                    if (stack.Count < 2)
                         Error();
 
                     int a = stack.Pop();
