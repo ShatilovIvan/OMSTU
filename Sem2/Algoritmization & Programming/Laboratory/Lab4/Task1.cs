@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 class Task1
 {
@@ -85,6 +85,12 @@ class Task1
                     continue;
                 }
             }
+        }
+
+        if (stack.Count > 1 || stack.Count == 0)
+        {
+            Console.WriteLine("Неверный формат входных данных!");
+            return;
         }
 
         Console.WriteLine(stack.Pop());
