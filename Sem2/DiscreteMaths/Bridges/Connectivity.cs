@@ -3,44 +3,40 @@ class Connectivity
     public static int FirstAlgorithm(int[,] graph)
     {
         int verticesCount = graph.GetLength(0);
-        List<int> vertices = new();
-        List<int> visitedVertices = new();
-        List<List<int>> connectivityComponents = new();
+        List<int> vertices = new List<int>();
+        List<List<int>> connectivityComponents = new List<List<int>>();
 
         for (int i = 0; i < verticesCount; i++)
         {
             vertices.Add(i);
         }
 
-        vertices.Remove(0);
-        visitedVertices.Add(0);
-
         while (vertices.Count > 0)
         {
-            for (int i = 0; i < visitedVertices.Count; i++)
+            List<int> visitedVertices = new List<int>();
+            Queue<int> queue = new Queue<int>();
+            
+            int startVertex = vertices[0];
+            queue.Enqueue(startVertex);
+            visitedVertices.Add(startVertex);
+            vertices.Remove(startVertex);
+
+            while (queue.Count > 0)
             {
+                int currentVertex = queue.Dequeue();
+                
                 for (int j = 0; j < verticesCount; j++)
                 {
-                    if (graph[visitedVertices[i],j] == 0)
-                    continue;
-
-                    int currentVertex = j;
-                    if (!visitedVertices.Contains(currentVertex))
+                    if (graph[currentVertex, j] != 0 && !visitedVertices.Contains(j))
                     {
-                        visitedVertices.Add(currentVertex);
-                        vertices.Remove(currentVertex);
+                        visitedVertices.Add(j);
+                        vertices.Remove(j);
+                        queue.Enqueue(j);
                     }
                 }
             }
 
             connectivityComponents.Add(visitedVertices);
-            visitedVertices.Clear();
-
-            if (vertices.Count != 0)
-            {
-                visitedVertices.Add(vertices[0]);
-                vertices.Remove(vertices[0]);
-            }
         }
 
         return connectivityComponents.Count;
