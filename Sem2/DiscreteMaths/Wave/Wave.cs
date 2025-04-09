@@ -21,9 +21,9 @@ class Program
                     {
                         if (map[x + 1, y] != "x")
                         {
-                            if (map[x + 1, y] == "e")
+                            if (map[x + 1, y] == "f")
                             {
-                                Console.WriteLine($"Путь: {step + 1}");
+                                Console.WriteLine(step + 1);
                                 return;
                             }
 
@@ -36,9 +36,9 @@ class Program
 
                         if (map[x - 1, y] != "x")
                         {
-                            if (map[x - 1, y] == "e")
+                            if (map[x - 1, y] == "f")
                             {
-                                Console.WriteLine($"Путь: {step + 1}");
+                                Console.WriteLine(step + 1);
                                 return;
                             }
 
@@ -51,9 +51,9 @@ class Program
 
                         if (map[x, y + 1] != "x")
                         {
-                            if (map[x, y + 1] == "e")
+                            if (map[x, y + 1] == "f")
                             {
-                                Console.WriteLine($"Путь: {step + 1}");
+                                Console.WriteLine(step + 1);
                                 return;
                             }
 
@@ -66,9 +66,9 @@ class Program
 
                         if (map[x, y - 1] != "x")
                         {
-                            if (map[x, y - 1] == "e")
+                            if (map[x, y - 1] == "f")
                             {
-                                Console.WriteLine($"Путь: {step + 1}");
+                                Console.WriteLine(step + 1);
                                 return;
                             }
 
@@ -93,7 +93,7 @@ class Program
             { "x", "-", "-", "-", "x", "x", "x" },
             { "x", "-", "x", "-", "-", "-", "x" },
             { "x", "-", "x", "-", "x", "-", "x" },
-            { "x", "-", "0", "-", "x", "e", "x" },
+            { "x", "-", "0", "-", "x", "f", "x" },
             { "x", "-", "-", "-", "x", "-", "x" },
             { "x", "x", "x", "x", "x", "x", "x" }
         };
