@@ -18,7 +18,7 @@ class Program
     {
         List<Phone> phones = new List<Phone>();
         phones.Add(new Phone("+11111111111", "mts"));
-        phones.Add(new Phone("+22222222222", "bb"));
+        phones.Add(new Phone("+22222222222", "mts"));
         phones.Add(new Phone("+33333333333", "tele"));
         phones.Add(new Phone("+44444444444", "mts"));
         phones.Add(new Phone("+55555555555", "mts"));
